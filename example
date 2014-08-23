@@ -1,0 +1,14 @@
+server {
+	listen 8080;
+
+	root /usr/share/nginx/html/example;
+	index index.html index.htm
+
+	server_name example;
+
+	error_log /var/log/nginx/error.log;
+
+	location / {
+		try_files $uri $uri/ =404;
+	}
+}
